@@ -12,120 +12,149 @@
 </head>
 
 <body>
+	<div class="showPurchase">
+		<span class="close">&times;</span>
+		<div>
+			<h3>You Purchased:</h3>
+			<p>Total Product:: <span class="showProducts">0</span></p>
+			<p>Total Prices:: <span class="showPrices">$0</span></p>
+		</div>
+	</div>
+
 	<nav>
-		<span>
-			<i>1</i>
+		<span id="show">
+			<i class="countProduct">0</i>
 			<img src="img/cart.png" alt="">
 		</span>
-		<div class="product-info">
-			<div class="product-info__box">
-				<div>
-					<img src="img/1.png" alt="">
-					<p class="name">Burger One</p>
+		<div class="product-info__container">
+			<div class="product-info">
+				<!-- <div class="product-info__box">
 					<div>
-						<span class="price">$10.99</span>
-						<input type="number" id="inputPrice" placeholder="1">
+						<img src="img/1.png" alt="">
+						<p class="name">Burger One</p>
+						<div>
+							<span class="price">$10.99</span>
+							<input type="number" id="inputPrice" value="1">
+						</div>
 					</div>
-				</div>
-				<button class="remove">Remove</button>
-			</div>
-			<div class="product-info__box">
-				<div>
-					<img src="img/1.png" alt="">
-					<p class="name">Burger One</p>
+					<button class="remove">Remove</button>
+				</div> -->
+				<!-- <div class="product-info__box">
 					<div>
-						<span class="price">$10.99</span>
-						<input type="number" id="inputPrice" placeholder="1">
+						<img src="img/1.png" alt="">
+						<p class="name">Burger One</p>
+						<div>
+							<span class="price">$10.99</span>
+							<input type="number" id="inputPrice" value="1">
+						</div>
 					</div>
-				</div>
-				<button class="remove">Remove</button>
+					<button class="remove">Remove</button>
+				</div> -->
 			</div>
+
 			<div class="product-balance">
 				<p class="total1">
 					<span>Total Product:</span>
-					<span class="totalProduct">55</span>
+					<span class="totalProduct">0</span>
 				</p>
 				<p class="total2">
 					<span>Total Prices:</span>
-					<span class="totalProduct">$550</span>
+					<span class="totalPrice">$0</span>
 				</p>
-				<button class="parchase">purchase</button>
+				<button class="purchase">purchase</button>
 			</div>
 		</div>
-
 	</nav>
+
+
 	<div class="item">
 		<div class="item__box">
 			<img src="img/1.png" alt="">
 			<p class="name">Burger One</p>
 			<div>
 				<span class="price">$10.99</span>
-				<input type="number" id="priceInput" placeholder="1">
+				<input type="number" disabled id="priceInput" placeholder="1">
 			</div>
-			<button class="add">Add to Cart</button>
+			<button class="addBtn">
+				<span class="add">Add to Cart</span>
+			</button>
 		</div>
 		<div class="item__box">
 			<img src="img/2.png" alt="">
 			<p class="name">Burger Two</p>
 			<div>
 				<span class="price">$20.99</span>
-				<input type="number" id="priceInput" placeholder="1">
+				<input type="number" disabled id="priceInput" placeholder="1">
 			</div>
-			<button class="add">Add to Cart</button>
+			<button class="addBtn">
+				<span class="add">Add to Cart</span>
+			</button>
 		</div>
 		<div class="item__box">
 			<img src="img/3.png" alt="">
 			<p class="name">Burger Three</p>
 			<div>
 				<span class="price">$30.99</span>
-				<input type="number" id="priceInput" placeholder="1">
+				<input type="number" disabled id="priceInput" placeholder="1">
 			</div>
-			<button class="add">Add to Cart</button>
+			<button class="addBtn">
+				<span class="add">Add to Cart</span>
+			</button>
 		</div>
 		<div class="item__box">
 			<img src="img/4.png" alt="">
 			<p class="name">Burger Four</p>
 			<div>
 				<span class="price">$40.99</span>
-				<input type="number" id="priceInput" placeholder="1">
+				<input type="number" disabled id="priceInput" placeholder="1">
 			</div>
-			<button class="add">Add to Cart</button>
+			<button class="addBtn">
+				<span class="add">Add to Cart</span>
+			</button>
 		</div>
 		<div class="item__box">
 			<img src="img/5.png" alt="">
 			<p class="name">Burger Five</p>
 			<div>
 				<span class="price">$50.99</span>
-				<input type="number" id="priceInput" placeholder="1">
+				<input type="number" disabled id="priceInput" placeholder="1">
 			</div>
-			<button class="add">Add to Cart</button>
+			<button class="addBtn">
+				<span class="add">Add to Cart</span>
+			</button>
 		</div>
 		<div class="item__box">
 			<img src="img/6.png" alt="">
 			<p class="name">Burger Six</p>
 			<div>
 				<span class="price">$60.99</span>
-				<input type="number" id="priceInput" placeholder="1">
+				<input type="number" disabled id="priceInput" placeholder="1">
 			</div>
-			<button class="add">Add to Cart</button>
+			<button class="addBtn">
+				<span class="add">Add to Cart</span>
+			</button>
 		</div>
 		<div class="item__box">
 			<img src="img/7.png" alt="">
 			<p class="name">Burger Seven</p>
 			<div>
 				<span class="price">$70.99</span>
-				<input type="number" id="priceInput" placeholder="1">
+				<input type="number" disabled id="priceInput" placeholder="1">
 			</div>
-			<button class="add">Add to Cart</button>
+			<button class="addBtn">
+				<span class="add">Add to Cart</span>
+			</button>
 		</div>
 		<div class="item__box">
 			<img src="img/8.png" alt="">
 			<p class="name">Burger Eight</p>
 			<div>
 				<span class="price">$80.99</span>
-				<input type="number" id="priceInput" placeholder="1">
+				<input type="number" disabled id="priceInput" placeholder="1">
 			</div>
-			<button class="add">Add to Cart</button>
+			<button class="addBtn">
+				<span class="add">Add to Cart</span>
+			</button>
 		</div>
 	</div>
 

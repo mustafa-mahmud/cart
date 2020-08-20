@@ -14,6 +14,75 @@ body {
 	font-size: 1.6rem;
 }
 
+.purchaseActive {
+	transform: translate(-50%, -50%) !important;
+}
+
+.showPurchase {
+	position: fixed;
+	width: 90%;
+	padding: 5rem 3rem;
+	background-color: #000;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -250%);
+	transition: all 0.5s ease-in;
+	z-index: 999;
+
+	.close {
+		position: absolute;
+		right: 2rem;
+		top: 1rem;
+		font-size: 3rem;
+		cursor: pointer;
+	}
+
+	div {
+		display: grid;
+		justify-items: center;
+
+		h3 {
+			margin-bottom: 2rem;
+			padding-bottom: 1rem;
+			font-size: 3rem;
+			border-bottom: 2px solid #fff;
+		}
+
+		p:nth-of-type(1) {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+
+			span {
+				font-size: 3rem;
+				color: #069c06;
+			}
+		}
+
+		p:nth-of-type(2) {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+
+			span {
+				font-size: 3rem;
+				color: #069c06;
+			}
+		}
+	}
+}
+
+button {
+	cursor: pointer;
+}
+
+.notActive {
+	background-color: rgba(#000, 0.3) !important;
+	cursor: not-allowed !important;
+
+	span {
+		pointer-events: none;
+	}
+}
+
 nav {
 	position: fixed;
 	right: 4rem;
@@ -23,7 +92,12 @@ nav {
 	color: #000;
 	display: grid;
 
-	.product-info {
+	.active {
+		display: block !important;
+		opacity: 1 !important;
+	}
+
+	.product-info__container {
 		width: 25rem;
 		padding: 1rem;
 		background-color: #fff;
@@ -34,70 +108,76 @@ nav {
 		-webkit-box-shadow: 5px 5px 15px -1px #000000;
 		box-shadow: 5px 5px 15px -1px #000000;
 
-		&__box {
-			display: grid;
-			border-bottom: 2px solid;
-			margin-bottom: 2rem;
+		opacity: 0;
+		display: none;
+		transition: all 0.5s linear;
 
-			div {
+		.product-info {
+			&__box {
 				display: grid;
-				grid-template-columns: 7rem 1fr;
-				grid-template-rows: repeat(2, min-content);
-				gap: 1rem;
-
-				img {
-					grid-column: 1/2;
-					grid-row: 1/-1;
-					width: 100%;
-					height: 100%;
-					display: block;
-				}
-
-				p {
-					grid-column: 2/3;
-					grid-row: 1/2;
-					padding-bottom: 5px;
-					border-bottom: 1px solid;
-					font-weight: bold;
-				}
+				border-bottom: 2px solid;
+				margin-bottom: 2rem;
 
 				div {
-					grid-column: 2/3;
-					grid-row: 2/3;
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
+					display: grid;
+					grid-template-columns: 7rem 1fr;
+					grid-template-rows: repeat(2, min-content);
+					gap: 1rem;
 
-					span {
-						width: auto;
-						height: auto;
+					img {
+						grid-column: 1/2;
+						grid-row: 1/-1;
+						width: 100%;
+						height: 100%;
+						display: block;
+					}
+
+					p {
+						grid-column: 2/3;
+						grid-row: 1/2;
+						padding-bottom: 5px;
+						border-bottom: 1px solid;
 						font-weight: bold;
 					}
 
-					input {
-						width: 6rem;
-						height: 3rem;
-						display: inline-block;
+					div {
+						grid-column: 2/3;
+						grid-row: 2/3;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+
+						span {
+							width: auto;
+							height: auto;
+							font-weight: bold;
+						}
+
+						input {
+							width: 6rem;
+							height: 3rem;
+							display: inline-block;
+						}
 					}
 				}
-			}
 
-			button.remove {
-				background-color: rgb(71, 4, 30);
-				border: 0;
-				display: inline-block;
-				height: 3rem;
-				color: #fff;
-				border-radius: 5px;
-				text-transform: uppercase;
-				letter-spacing: 1.5px;
-				font-weight: bold;
-				margin: 1rem 0;
-				padding: 0.5rem 1rem;
-				outline: 0;
-				font-size: 1rem;
-				line-height: 0;
-				justify-self: flex-end;
+				button.remove {
+					background-color: rgb(71, 4, 30);
+					border: 0;
+					display: inline-block;
+					height: 3rem;
+					color: #fff;
+					border-radius: 5px;
+					text-transform: uppercase;
+					letter-spacing: 1.5px;
+					font-weight: bold;
+					margin: 1rem 0;
+					padding: 0.5rem 1rem;
+					outline: 0;
+					font-size: 1rem;
+					line-height: 0;
+					justify-self: flex-end;
+				}
 			}
 		}
 
@@ -131,7 +211,7 @@ nav {
 				}
 			}
 
-			.parchase {
+			.purchase {
 				border: 0;
 				display: inline-block;
 				margin-top: 2rem;
@@ -234,7 +314,7 @@ nav {
 			}
 		}
 
-		button {
+		.addBtn {
 			height: 4rem;
 			border: 0;
 			outline: 0;
@@ -245,6 +325,13 @@ nav {
 			text-transform: uppercase;
 			font-weight: bold;
 			cursor: pointer;
+
+			span.add {
+				display: block;
+				width: 100%;
+				height: 100%;
+				line-height: 4rem;
+			}
 		}
 	}
 }
